@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="1" hostname="07308a810dd8" name="pytest" skipped="0" tests="2" time="1.333" timestamp="2024-11-11T19:58:40.656873"><testcase classname="test.rest.api_test.TestApi" name="test_api_add" time="0.011"></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_divide_by_zero" time="0.002"><failure message="urllib.error.HTTPError: HTTP Error 400: BAD REQUEST">self = &lt;rest.api_test.TestApi testMethod=test_api_divide_by_zero&gt;
+
+    def test_api_divide_by_zero(self):
+        url = f&quot;{BASE_URL}/calc/divide/1/0&quot;
+&gt;       response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+
+test/rest/api_test.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.6/urllib/request.py:223: in urlopen
+    return opener.open(url, data, timeout)
+/usr/local/lib/python3.6/urllib/request.py:532: in open
+    response = meth(req, response)
+/usr/local/lib/python3.6/urllib/request.py:642: in http_response
+    &apos;http&apos;, request, response, code, msg, hdrs)
+/usr/local/lib/python3.6/urllib/request.py:570: in error
+    return self._call_chain(*args)
+/usr/local/lib/python3.6/urllib/request.py:504: in _call_chain
+    result = func(*args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;urllib.request.HTTPDefaultErrorHandler object at 0x7fc2801cc9b0&gt;
+req = &lt;urllib.request.Request object at 0x7fc2801ccf60&gt;
+fp = &lt;http.client.HTTPResponse object at 0x7fc280a62048&gt;, code = 400
+msg = &apos;BAD REQUEST&apos;, hdrs = &lt;http.client.HTTPMessage object at 0x7fc27eee0358&gt;
+
+    def http_error_default(self, req, fp, code, msg, hdrs):
+&gt;       raise HTTPError(req.full_url, code, msg, hdrs, fp)
+E       urllib.error.HTTPError: HTTP Error 400: BAD REQUEST
+
+/usr/local/lib/python3.6/urllib/request.py:650: HTTPError</failure></testcase></testsuite></testsuites>
